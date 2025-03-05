@@ -4,7 +4,7 @@
 
 Price::Price() : hryvnia(0), kopiykas(0) {}
 
-Price::Price(int h, int k) : hryvnia(h), kopiykas(k) {
+Price::Price(int h, short k) : hryvnia(h), kopiykas(k) {
     normalize();
 }
 

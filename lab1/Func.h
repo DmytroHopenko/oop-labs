@@ -3,10 +3,10 @@
 
 struct Price {
     int hryvnia;
-    int kopiykas;
+    short kopiykas;
 
     Price();
-    Price(int h, int k);
+    Price(int h, short k);
 
     void normalize();
     Price operator+(const Price& other) const;

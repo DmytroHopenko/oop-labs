@@ -12,6 +12,7 @@ int main() {
     int h, k, quantity;
     while (cin >> h >> k >> quantity) {
         Price itemPrice(h, k);
+        if(h < 0 || k < 0 || quantity < 0) continue;
         Price cost = itemPrice * quantity;
         total = total + cost;
     }
