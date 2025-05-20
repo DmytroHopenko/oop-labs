@@ -10,9 +10,10 @@ class Device {
 protected:
     string brand;
     string model;
+    double weight;
 
 public:
-    Device(string brand, string model);
+    Device(string brand, string model, double weight);
 
     virtual ~Device();
 
@@ -22,13 +23,19 @@ public:
 };
 
 class Portable : virtual public Device {
-protected:
-    double weight;
-
 public:
     Portable(string brand, string model, double weight);
 
     virtual ~Portable();
+
+    void displayInfo() const override;
+};
+
+class Phone : virtual public Device {
+public:
+    Phone(string brand, string model, double weight);
+
+    virtual ~Phone();
 
     void displayInfo() const override;
 };
@@ -61,6 +68,17 @@ public:
     SuperDevice(string brand, string model, string cpu, double weight, bool hasTouchscreen);
 
     virtual ~SuperDevice();
+
+    void displayInfo() const override;
+};
+
+class SmartHybridDevice : public Portable, public Phone, public Computer {
+    bool hasTouchscreen;
+
+public:
+    SmartHybridDevice(string brand, string model, string cpu, double weight, bool hasTouchscreen);
+
+    virtual ~SmartHybridDevice();
 
     void displayInfo() const override;
 };
